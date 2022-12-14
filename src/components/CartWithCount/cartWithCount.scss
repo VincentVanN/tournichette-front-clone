@@ -1,0 +1,126 @@
+@use 'src/styles/_vars.scss';
+
+.cartWindow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: vars.$colorLightGreen;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartText {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.1s;
+  font-size: 0.9em;
+  color: vars.$colorDarkGreen;
+  font-weight: 600;
+  padding: 10px;
+}
+.product-line {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.dotted {
+  flex: 1;
+  height: 15px;
+  border-bottom: dotted 1px vars.$colorDarkGreen;
+}
+.carWithCount-button-group{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: vars.$colorLightGreen;
+  color: vars.$colorDarkGreen;
+  font-weight: 600;
+}
+.cartWithCountIncrement {
+  display: flex;
+}
+.productToDisplay {
+  margin-bottom: 7px;
+}
+.globalAmount {
+  display: flex;
+  justify-content:flex-end;
+  font-size: 1.1em;
+  border-top: solid 2px rgb(53, 104, 89);
+  padding: 10px;
+}
+.redirection {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.2em;
+  &:hover {
+    color: vars.$colorOrange;
+  }
+}
+.countCart-container{
+  position: relative;
+  width: 0;
+  height: 0;
+}
+.headerCart {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 140px;
+  height: 90px;
+  width: 90px;
+  z-index: 20;
+  margin: 0;
+  background: vars.$colorLightGreen;
+  color: vars.$colorDarkGreen;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 7px 8px -3px rgba(0, 0, 0, 0.341);
+  cursor: pointer;
+  border: solid 2px vars.$colorDarkGreen;
+}
+.cart {
+position: relative;
+left: -10px;
+bottom: -25px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.icon {
+position: absolute;
+}
+.countLargeSize {
+  position: relative;
+  top: -70px;
+  left: 35px;
+  width: 30px;
+  height: 30px;
+  color: vars.$colorDarkGreen;
+  background: vars.$colorBeige;
+  padding-bottom: 1px;
+  border: solid 2px  vars.$colorOrange;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & p {
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

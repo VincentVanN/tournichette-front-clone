@@ -1,0 +1,104 @@
+@use 'src/styles/_vars.scss';
+.card {
+  &-container {
+    width: 100%;
+    display: flex;
+    margin: auto;
+  }
+  &-article{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  &-button{
+    border:none;
+    background: vars.$colorBeige;
+    margin-left: 8px;
+  }
+  &-infos{
+    display: flex;
+    flex-direction: row;
+  }
+  &-leftSide {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 4px;
+    & :hover {
+      color: vars.$colorOrange;
+      scale: 1.05;
+    }
+  }
+  &-title{
+    white-space: nowrap;
+    color: vars.$colorDarkGreen;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 5px;
+    & :hover {
+      color: vars.$colorOrange;
+      scale: 1.05;
+    }
+  }
+  &-unity{
+    color: vars.$colorMediumGreen;
+    font-weight: 500;
+    padding-right: 3px;
+  }
+  &-price{
+    color: vars.$colorDarkGreen;
+    font-weight: 500;
+  }
+  &-container {
+   display: block;
+  }
+}
+ion-icon {
+  padding: 2px;
+}
+.doted {
+  flex: 1;
+  height: 15px;
+  border-bottom: dotted 3px vars.$colorMediumGreen;
+  margin-bottom: 5px;
+}
+.button-group {
+  display: flex;
+  align-items: center;
+  &-meta {
+    padding-left: 2px;
+    color: vars.$colorMediumGreen;
+    font-weight: 600;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .card-container{
+    width: 93%;
+  }
+  
+  
+}
+
+@media only screen and (min-width: 1024px) {
+  
+.card-article {
+width: 100%;
+margin: 7px 0;
+padding-top: 9px;
+font-size: 0.9em;
+&:active {
+  transform: scale(0.99);
+}
+.card-container{
+  box-shadow: 3px 12px 9px -8px rgba(0,0,0,0.12);
+}
+}
+.card-container .shoppingCart{
+  width: 100%;
+  display: flex;
+
+  
+}
+}

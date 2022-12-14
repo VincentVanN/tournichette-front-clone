@@ -1,0 +1,15 @@
+@use 'src/styles/_vars.scss';
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.component {
+  display: flex;
+  height: 100vh;
+  
+  padding-left: 80px;
+  background: vars.$colorLightGreen;
+}

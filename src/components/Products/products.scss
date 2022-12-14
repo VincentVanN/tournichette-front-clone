@@ -1,0 +1,125 @@
+@use 'src/styles/_vars.scss';
+.products-container {
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100vh;
+  background: vars.$colorBeige;
+  scrollbar-width: none;
+}
+.products{
+  width: 100%;
+  height: 100%;
+  &-searchBar {
+   width: 100%;
+   height: 40px;
+   display: flex;
+   align-content: center;
+   justify-content: center;
+   margin: 17px 0 10px;
+   &-input{
+    border: none;
+    width: 190px;
+    height: 30px;
+    font-family: vars.$fontLekton;
+    animation: opening 0.5s;
+    }
+  }
+  &-categories {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    font-family: vars.$fontMontserrat;
+    text-decoration: none;
+    font-size: 1.2em;
+    background: vars.$colorBeige;
+   
+  }
+  &-categoryName{
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: vars.$colorMediumGreen;
+    border-bottom: solid 2px vars.$colorMediumGreen;
+    padding-bottom: 20px;
+  }
+  &-header{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 20px;
+    z-index: 3;
+    background: vars.$colorBeige;
+  }
+  &-items{
+    height: 100%;
+    padding-top: 100px;
+    margin: 20px;
+    cursor: pointer;
+  }
+}
+.hidden {
+  display: none; 
+}
+.products-categoryName.active{
+  color: vars.$colorDarkGreen;
+  font-weight: 500;
+  border-bottom: solid 2px vars.$colorDarkGreen;
+  box-shadow: 0 4px 2px -3px vars.$colorDarkGreen;
+}
+@keyframes opening {
+  from {
+    width: 0;
+  }
+  to {
+    width: 180px;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 1023px) {
+  .products-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 900px;
+  }
+  .products-header {
+    width: 100%;
+  }
+  .products-items{
+    margin: 30px 8px;
+  }
+ }
+ @media only screen and (min-width: 1024px) {
+  .products-container{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  .products{
+    width: 100%;
+    margin: 0;
+    &-header {
+      width: 100%;
+      position: sticky;
+      background: vars.$colorBeige;
+    }
+    &-items {
+      padding-top: 20px;
+    }
+  }
+  .selectedCard {
+    color: vars.$colorOrange;
+  }
+ }

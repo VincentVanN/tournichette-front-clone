@@ -1,0 +1,9 @@
+@use 'src/styles/_vars.scss';
+
+.socialNetwork-container {
+  position:relative;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

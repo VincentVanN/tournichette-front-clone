@@ -1,0 +1,67 @@
+@use 'src/styles/_vars.scss';
+
+.iconButton_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.buttonToggle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 70px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: vars.$colorBeige;
+}
+
+.window {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: vars.$colorLightGreen;
+  border: solid 2px vars.$colorDarkGreen;
+  border-radius: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonToggle.active ~ .window {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+.window::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: vars.$colorLightGreen;
+  border-right: solid 2px vars.$colorDarkGreen;
+  border-bottom: solid 2px vars.$colorDarkGreen;;
+  left: calc(50% - 8px);
+  bottom: 4px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.buttonToggle.active ~ .window::before {
+  transition-delay: 0.3s;
+  bottom: -6px;
+}
+.text {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.1s;
+  font-size: 1.3em;
+  color: vars.$colorDarkGreen;
+  font-weight: 500;
+  font-family: vars.$fontMontserrat;
+  transition-delay: 0s;
+}
+.buttonToggle.active ~ .window .text {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.7s;
+}

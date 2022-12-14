@@ -1,0 +1,33 @@
+@use 'reset';
+@use 'vars';
+
+@font-face {
+  font-family:'lekton', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+};
+@font-face {
+  font-family: "Hatton-light"; 
+  src: local("PPHatton-Ultralight"),
+    url("../assets/fonts/PPHatton-Ultralight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Hatton-medium"; 
+  src: local("PPHatton-Medium"),
+    url("../assets/fonts/PPHatton-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Hatton-bold"; 
+  src: local("PPHatton-medium"),
+    url("../assets/fonts/PPHatton-Bold.ttf") format("truetype");
+}
+body {
+  font-family: vars.$fontLekton;
+}
+h1, h2, h3 {
+  font-weight: normal;
+}
+input{
+  box-shadow: 0 0 0px 1000px #F1F5DF inset;
+  background: vars.$colorLightGreen;
+  font-family: vars.$fontMontserrat;
+}

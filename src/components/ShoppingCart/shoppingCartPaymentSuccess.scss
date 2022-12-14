@@ -1,0 +1,75 @@
+@use 'src/styles/_vars.scss';
+.ShoppingCartSuccess-container{
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.ShoppingCartSuccess {
+  width: 100%;
+  height: 100vh;
+  background: vars.$colorBeige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  &-hello {
+    margin-bottom: 20px;
+  }
+  &-logo {
+    position: fixed;
+    top: 0;
+    width: 60vw;
+    max-width: 300px;
+  }
+  &-annoncement{
+    width: 100%;
+    font-family: vars.$fontMontserrat;
+    font-size: 25px;
+    text-align: center;
+    color: vars.$colorDarkGreen;
+    font-weight: 500;
+    padding-top: 200px;
+  }
+  &-button {
+    font-family: vars.$fontMontserrat;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: vars.$colorBeige;
+    color: vars.$colorDarkGreen;
+    border-radius: 3px;
+    &-group {
+      width: 350px;
+      height: 130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+    &-title {
+      width: 180px;
+      color: vars.$colorDarkGreen;
+      font-size: 1.3em;
+
+    }
+  }
+  
+}
+ion-icon:active{
+    transform: scale(0.92);
+}
+.top{
+  border-bottom: solid 1px vars.$colorMediumGreen;
+}

@@ -1,0 +1,114 @@
+@use 'src/styles/_vars.scss';
+
+.orderHistory {
+display: flex;
+width: 100%;
+height: 100%;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background: vars.$colorBeige;
+  &-title {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    font-size: 1.2em;
+    width: 100%;
+    color: vars.$colorDarkGreen;
+    background: vars.$colorBeige;
+    font-weight: 500;
+    & p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 90px;
+      margin: auto;
+      border-bottom: solid 1px vars.$colorMediumGreen;
+      font-family: vars.$fontMontserrat;
+    }
+  }
+  .order-empty{
+    font-family: vars.$fontLekton;
+    color: vars.$colorDarkGreen;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  &-one{
+    margin-top: 30px;
+    font-family: vars.$fontLekton;
+    color: vars.$colorDarkGreen;
+    font-weight: 400;
+    width: 79%;
+    padding: 2% 1%;
+    border-bottom: solid 1px vars.$colorDarkGreen;
+  }
+
+  &-date, &-price{
+    font-weight: 500;
+  }
+  &-product{
+    font-weight: 500;
+    color: vars.$colorMediumGreen;
+  }
+  &-button{
+    margin-top: 3%;
+    padding: 1%;
+    font-family: vars.$fontLekton;
+    color: vars.$colorDarkGreen;
+    font-weight: bold;
+    background-color: vars.$colorBeige;
+    border: none;
+   
+  }
+
+}
+input[type="date"] {
+  width: 150px;
+  height: 30px;
+  background: vars.$colorLightGreen;
+  border: solid 1px vars.$colorDarkGreen;
+  border-radius: 5px;
+  color: vars.$colorDarkGreen;
+  font-family: vars.$fontMontserrat;
+  font-weight: 600;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  background-image: url('src/components/User/calendar_date_event_schedule_icon_127191.png');
+  background-size: 20px;
+  background-position: 100% center;
+}
+.filter-container {
+  position: sticky;
+  color: vars.$colorDarkGreen;
+  font-family: vars.$fontMontserrat;
+  font-weight: 400;
+  &-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  & h3 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: vars.$colorDarkGreen;
+  font-family: vars.$fontMontserrat;
+  font-weight: 500;
+  }
+}
+@media only screen and (min-width: 1024px) {
+
+  .orderHistory-one{
+    width: 79%;
+  }
+}

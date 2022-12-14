@@ -1,0 +1,109 @@
+@use 'src/styles/_vars.scss';
+.depot-container {
+  position:relative;
+  width: 100%;
+  min-width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+}
+.radio-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20%;
+  & li {
+    padding: 10px;
+    font-family: vars.$fontLekton;
+    color: vars.$colorMediumGreen;
+    font-weight: 500;
+    font-size: 1.2em;
+    & :hover {
+      cursor: pointer;
+    }
+  }
+}
+.radio {
+  opacity: 0;
+}
+.depot-title {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: vars.$fontMontserrat;
+  color: vars.$colorDarkGreen;
+  font-weight: 600;
+  font-size: 1.2em;
+  border-bottom: solid 1px vars.$colorMediumGreen;
+  background: vars.$colorBeige;
+}
+.message {
+  width: 100%;
+  font-size: 1.5em;
+  color: vars.$colorOrange;
+  text-align: center;
+  &-container {
+    width: 100%;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 50px;
+  }
+}
+.validOrderButton {
+  position: absolute;
+  bottom: 20px;
+  & :hover {
+    cursor: pointer;
+  }
+  }
+  .paymentLine {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  & label{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: vars.$colorDarkGreen;
+  }
+}
+.ionicon {
+  margin-left: 20px;
+}
+.depot-label {
+  font-size: 1.2em;
+  font-weight: 600;
+  &:hover {
+    color: vars.$colorOrange;
+  }
+}
+.depot-information {
+  font-size: 0.8em;
+}
+  @media screen and (min-width: 577px) and (max-width: 1023px){
+    .radio-container{
+      width: 80%;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .depot-container {
+      height: 100%; 
+    }
+    .radio-container li {
+      margin-bottom: 20px;
+    }
+  }

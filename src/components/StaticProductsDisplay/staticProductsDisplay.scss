@@ -1,0 +1,57 @@
+@use 'src/styles/_vars.scss';
+
+.static{
+  &-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: vars.$colorBeige;
+  }
+  &-image {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+  }
+  &-title {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: vars.$colorOrange;
+    font-family: vars.$fontMontserrat;
+    font-size: 4em;
+    font-weight: 500;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.4);
+    background: rgba(226, 221, 199, 0.5);
+    &-container {
+      width: 100%;
+      height: 25%;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+  }
+  &-subtitle {
+    text-align: center;
+    font-family: vars.$fontMontserrat;
+    color: vars.$colorDarkGreen;
+    font-size: 1.8em;
+    font-weight: 500;
+    padding: 0 80px;
+    &-container {
+      width: 100%;
+      height: 30%;
+      margin-top: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+     
+    }
+  }
+}

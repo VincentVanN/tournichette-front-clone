@@ -1,0 +1,56 @@
+@use 'src/styles/_vars.scss';
+main {
+  width: 100vw;
+  height: 100vh;
+}
+.singlePage-container{
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background: vars.$colorLightGreen;
+  
+}
+.largeComponent{
+  display: block;
+  flex-basis:60%;
+  max-width: 780px;
+  min-width: 500px;
+  max-height: 90vh;
+  color: black;
+  margin: 40px 150px 40px 10px;
+  background: vars.$colorBeige;
+  box-shadow: 4px 7px 8px -3px rgba(0,0,0,0.34);
+  overflow: auto;
+  border-radius: 10px;
+}
+.smallComponent{
+  display: block;
+  overflow: auto;
+  flex-basis:33.33%;
+  max-width: 600px;
+  min-width: 400px;
+  max-height: 90vh;
+  margin: 40px 0 40px 210px;
+  background: vars.$colorBeige;
+  box-shadow: 4px 7px 8px -3px rgba(0,0,0,0.34);
+  border-radius: 10px;
+}
+@media only screen and (min-width: 1024px) {
+  .largeComponent{
+    position: relative;
+    display: block;
+  }
+  
+}
+@media only screen and (min-width: 1290px) {
+ 
+  .singlePage-container {
+    background-image: url('src/assets/logo.svg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 5%;
+  }
+}
