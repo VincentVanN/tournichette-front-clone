@@ -5,8 +5,8 @@ export const navigationSlice = createSlice({
   initialState: {
     width: 0,
     height: 0,
-    baseUrl: 'http://admin-eshop.vann-dev.com',
-    baseUrlNode: 'http://localhost:8000/api/stripe',
+    baseUrl: 'https://admin-eshop.vann-dev.com',
+    baseUrlNode: 'https://localhost:8000/api/stripe',
     navigationMessage: '',
     buttonText: '',
     redirection: '',
