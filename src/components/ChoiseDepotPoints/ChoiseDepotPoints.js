@@ -133,50 +133,6 @@ function ChoiseDepotPoints() {
             )}
           </label>
         </li>
-        <li
-          className="paymentLine"
-        >
-          <label
-            htmlFor="creditCard"
-            className={selectedPayment === 'creditCard' ? 'selected' : ''}
-          >
-            <input
-              type="radio"
-              className="radio"
-              id="creditCard"
-              name="paymentChoiseRadio"
-              checked={selectedPayment === 'creditCard'}
-              onChange={handleChangePayment}
-            />
-            <ion-icon name="card-outline" style={{ marginRight: '10px' }} />
-            Paiement par carte bancaire
-            {selectedPayment === 'creditCard' && (
-              <svg xmlns="http://www.w3.org/2000/svg" className="ionicon" width="32" height="32" viewBox="0 0 512 512" color="#fd7c55"><title>Checkmark Circle</title>
-                <motion.path
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 0.4 }}
-                  d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeMiterlimit="10"
-                  strokeWidth="32"
-                />
-                <motion.path
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 0.4 }}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="32"
-                  d="M352 176L217.6 336 160 272"
-                />
-              </svg>
-            )}
-          </label>
-        </li>
         {selectedPayment && (
         <motion.div
           className="validOrderButton"

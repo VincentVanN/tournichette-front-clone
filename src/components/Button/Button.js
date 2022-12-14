@@ -56,6 +56,7 @@ function Button({
             duration: 0.7,
           },
         }}
+
       >
         <ion-icon
           name={icon}

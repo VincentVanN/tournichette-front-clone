@@ -10,7 +10,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import CheckoutForm from './CheckoutForm';
 import { setServerMessage } from '../feature/shoppingCart.slice';
-import { setButtonText, setShowModal } from '../feature/navigation.slice';
+import {
+  setButtonText,
+  setShowModal,
+} from '../feature/navigation.slice';
 import { postOrder } from '../AsyncChunk/AsyncChunkShoppingCart';
 import { setpaymentCustomerId } from '../feature/user.slice';
 
@@ -24,11 +27,9 @@ function Stripe() {
   const [isLoading, setIsLoading] = useState(false);
   const [isFocus, setIsFocus] = useState(false);
   const [paymentIntentId, setPaymentIntentId] = useState('');
-  const amount = useSelector((state) => state.shoppingCart.cartAmount);
-  const paymentCustomerId = useSelector((state) => state.user.user.paymentCustomerId);
-  const baseUrlNode = useSelector((state) => state.navigation.baseUrlNode);
-  const width = useSelector((state) => state.navigation.width);
-  const email = useSelector((state) => state.user.user.email);
+  const { amount } = useSelector((state) => state.shoppingCart);
+  const { paymentCustomerId, email } = useSelector((state) => state.user.user);
+  const { baseUrlNode, width } = useSelector((state) => state.navigation);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

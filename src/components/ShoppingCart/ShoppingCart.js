@@ -1,16 +1,17 @@
 import './shoppingCart.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Card from '../Card/Card';
 import ChoiseDepotPoints from '../ChoiseDepotPoints/ChoiseDepotPoints';
 import ShoppingCartEmpty from './ShoppingCartEmpty';
 import { deleteShoppingCart } from '../../feature/shoppingCart.slice';
 import Button from '../Button/Button';
+import { setButtonText, setCartOpening, setNavigationMessage, setShowModal } from '../../feature/navigation.slice';
 
 function ShoppingCart() {
   const cartToDisplay = useSelector((state) => state.shoppingCart.shoppingCart);
-  const width = useSelector((state) => state.navigation.width);
+  const { width, cartOpening } = useSelector((state) => state.navigation);
   const dispatch = useDispatch();
   //
   const [isAdressMenu, setIsAdressMenu] = useState(false);
@@ -20,7 +21,14 @@ function ShoppingCart() {
   //
   // get amount of order
   const cartAmount = useSelector((state) => state.shoppingCart.cartAmount);
-
+  useEffect(() => {
+    if (cartOpening && cartToDisplay.length !== 0) {
+      dispatch(setNavigationMessage('Pour la démonstration, le serveur de paiement Stripe a été désactivé'));
+      dispatch(setButtonText('Valider'));
+      dispatch(setShowModal(true));
+      dispatch(setCartOpening(false));
+    }
+  }, [cartOpening, cartToDisplay]);
   if (cartToDisplay.length === 0) {
     return (
       <ShoppingCartEmpty />

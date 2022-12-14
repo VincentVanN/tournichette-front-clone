@@ -9,14 +9,15 @@ import './loginForm.scss';
 import SubscribeForm from './SubscribeForm';
 import { loginUser, loginUserWithGoogle, resetPassword } from '../../AsyncChunk/AsyncChunkUser';
 import Button from '../Button/Button';
-import { setButtonText, setShowModal } from '../../feature/navigation.slice';
+import {
+  setButtonText, setFirstOpening, setNavigationMessage, setShowModal,
+} from '../../feature/navigation.slice';
 import SocialNetwork from '../SocialNetwork/SocialNetwork';
 
 function LoginForm() {
   const isSubscribe = useSelector((state) => state.user.isSubscribe);
-  const width = useSelector((state) => state.navigation.width);
   const { username, password } = useSelector((state) => state.user.login);
-  const loginWithGoogleRejected = useSelector((state) => state.navigation.loginWithGoogleRejected);
+  const { loginWithGoogleRejected, width, firstOpening } = useSelector((state) => state.navigation);
   const dispatch = useDispatch();
   const handleChangeLogin = (value, key) => {
     dispatch(changeLoginForm([key, value]));
@@ -51,6 +52,14 @@ function LoginForm() {
       dispatch(setShowModal(true));
     }
   }, [loginWithGoogleRejected]);
+  useEffect(() => {
+    if (firstOpening) {
+      dispatch(setNavigationMessage('Ce site est un clone d\'un site en production à des fin de démonstation'));
+      dispatch(setButtonText('Valider'));
+      dispatch(setShowModal(true));
+      dispatch(setFirstOpening(false));
+    }
+  }, [firstOpening]);
   return (
 
     <div className="form">

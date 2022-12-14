@@ -5,7 +5,7 @@ export const navigationSlice = createSlice({
   initialState: {
     width: 0,
     height: 0,
-    baseUrl: 'http://localhost:8000',
+    baseUrl: 'http://admin-eshop.vann-dev.com',
     baseUrlNode: 'http://localhost:8000/api/stripe',
     navigationMessage: '',
     buttonText: '',
@@ -14,7 +14,8 @@ export const navigationSlice = createSlice({
     loginWithGoogleRejected: false,
     isPhone: false,
     isPassword: false,
-
+    firstOpening: true,
+    cartOpening: true,
   },
   reducers: {
 
@@ -57,6 +58,12 @@ export const navigationSlice = createSlice({
     setLoginWithGoogleRejected: (state, { payload }) => {
       state.loginWithGoogleRejected = payload;
     },
+    setFirstOpening: (state, { payload }) => {
+      state.firstOpening = payload;
+    },
+    setCartOpening: (state, { payload }) => {
+      state.cartOpening = payload;
+    },
   },
 });
 export const {
@@ -73,5 +80,7 @@ export const {
   setLoginWithGoogleRejected,
   setIsPassword,
   setIsPhone,
+  setFirstOpening,
+  setCartOpening,
 } = navigationSlice.actions;
 export default navigationSlice.reducer;

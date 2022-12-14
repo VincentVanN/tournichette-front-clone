@@ -203,7 +203,7 @@ function SubscribeForm() {
             className="check-password"
             key="password"
             initial={{ x: 0, opacity: 0 }}
-            animate={{ x: 400, opacity: 1, zIndex: 0 }}
+            animate={{ x: 300, opacity: 1, zIndex: 0 }}
             exit={{ x: 120, opacity: 0, zIndex: 0 }}
           >
             <div className="checkbox">
@@ -225,7 +225,7 @@ function SubscribeForm() {
             className="check-password"
             key="scdPassword"
             initial={{ x: 0, opacity: 0 }}
-            animate={{ x: 400, opacity: 1 }}
+            animate={{ x: 300, opacity: 1 }}
             exit={{ x: 120, opacity: 0 }}
           >
             <div className="checkbox">

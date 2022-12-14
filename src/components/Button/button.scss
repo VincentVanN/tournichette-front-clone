@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: vars.$colorBeige;
+  background: transparent;
 }
 
 .window {
@@ -32,7 +32,7 @@
 .buttonToggle.active ~ .window {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
-.window::before {
+.buttonToggle.active ~ .window::before {
   content: '';
   position: absolute;
   width: 16px;
@@ -45,11 +45,10 @@
   transform: rotate(45deg);
   border-radius: 2px;
   transition: 0.3s;
-}
-.buttonToggle.active ~ .window::before {
   transition-delay: 0.3s;
   bottom: -6px;
 }
+
 .text {
   opacity: 0;
   visibility: hidden;
